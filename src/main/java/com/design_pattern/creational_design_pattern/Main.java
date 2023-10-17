@@ -8,6 +8,8 @@ import java.lang.reflect.InvocationTargetException;
 public class Main {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		
+		//Lazy Way
 		Student student = Student.getInstance();
 		System.out.println(student.hashCode());
         Student instanceTwo = null;
@@ -23,6 +25,13 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+		
+		
+		// Eager Way
+		EagerSingleton eagerSingleton = EagerSingleton.getInstance();
+		System.out.println(eagerSingleton.hashCode());
+		EagerSingleton eagerSingleton1 = EagerSingleton.getInstance();
+		System.out.println(eagerSingleton1.hashCode());
 		
 	}
 	
